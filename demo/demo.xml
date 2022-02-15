@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+
+          <record id="object0" model="persona.persona">
+            <field name="name">1515161D</field>
+            <field name="nombre">Pepelui</field>
+	    <field name="telefono">666615161</field>          
+	  </record>
+
+          <record id="object1" model="persona.persona">
+            <field name="name">11111111D</field>
+            <field name="nombre">Aleandro</field>
+	    <field name="telefono">665151161</field>
+          </record>
+
+          <record id="object0" model="persona.perro">
+            <field name="codigo">123515</field>
+            <field name="nombre">Chica</field>
+      <field name="raza">Bulga</field>          
+    </record>
+
+          <record id="object1" model="persona.perro">
+            <field name="codigo">11111111D</field>
+            <field name="nombre">Coco</field>
+      <field name="raza">Pointer</field>
+          </record>
+
+          <record id="object0" model="persona.coche">
+            <field name="marca">BMW</field>
+            <field name="color">Rojo</field>
+      <field name="modelo">M4</field>          
+    </record>
+
+          <record id="object1" model="persona.coche">
+            <field name="marca">KIA</field>
+            <field name="color">Gris</field>
+      <field name="modelo">CEED</field>
+          </record>
+    </data>
+</odoo>

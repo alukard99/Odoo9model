@@ -1,0 +1,291 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="persona.list">
+      <field name="name">persona list</field>
+      <field name="model">persona.persona</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="persona.action_window">
+      <field name="name">persona window</field>
+      <field name="res_model">persona.persona</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="persona.action_server">
+      <field name="name">persona server</field>
+      <field name="model_id" ref="model_persona_persona"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="persona" id="persona.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="persona.menu_1" parent="persona.menu_root"/>
+    <menuitem name="Menu 2" id="persona.menu_2" parent="persona.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="persona.menu_1_list" parent="persona.menu_1"
+              action="persona.action_window"/>
+    <menuitem name="Server to list" id="persona" parent="persona.menu_2"
+              action="persona.action_server"/>
+-->
+<!-- Vistas de persona-->
+
+    <record model="ir.ui.view" id="persona.persona_list_view">
+      <field name="name">persona.persona.view.tree</field>
+      <field name="model">persona.persona</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="telefono"/>
+        </tree>
+      </field>
+    </record>
+
+<!-- search -->
+
+    <record model="ir.ui.view" id="persona.persona_search_view">
+      <field name="name">persona.persona.view.search</field>
+      <field name="model">persona.persona</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="telefono"/>
+          <group>
+            <filter name="group_by_nombre" string="nombre" context="{'gropup_by':'nombre'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    
+    <!-- form -->
+    
+    <record model="ir.ui.view" id="persona.persona_form_view">
+      <field name="name">persona.persona.view.form</field>
+      <field name="model">persona.persona</field>
+      <field name="arch" type="xml">
+        <form string="Información persona">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                DNI <field name="name" placeholder="dni"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="nombre" placeholder="nombre"/>
+                <field name="telefono"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+
+    <!-- Definición de menús-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="persona.persona_action_window">
+      <field name="name">Personas</field>
+      <field name="res_model">persona.persona</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="persona" id="persona.menu_root"/>
+    <menuitem name="Personas" id="persona.menu_persona" parent="persona.menu_root"/>
+    <menuitem name="List" id="persona.menu_persona_list" parent="persona.menu_persona"
+              action="persona.persona_action_window"/>
+
+
+
+
+
+
+
+
+    <record model="ir.ui.view" id="persona.perro_list_view">
+      <field name="name">persona.perro.view.tree</field>
+      <field name="model">persona.perro</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="codigo"/>
+          <field name="nombre"/>
+          <field name="raza"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- search -->
+
+    <record model="ir.ui.view" id="persona.perro_search_view">
+      <field name="name">persona.perro.view.search</field>
+      <field name="model">persona.perro</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="codigo"/>
+          <field name="nombre"/>
+          <field name="raza"/>
+          <group>
+            <filter name="group_by_nombre" string="nombre" context="{'gropup_by':'nombre'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    
+    <!-- form -->
+    
+    <record model="ir.ui.view" id="persona.perro_form_view">
+      <field name="name">persona.perro.view.form</field>
+      <field name="model">persona.perro</field>
+      <field name="arch" type="xml">
+        <form string="Información perro">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                Codigo <field name="codigo" placeholder="codigo"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="nombre" placeholder="nombre"/>
+                <field name="raza"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+
+    <!-- Definición de menús-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="persona.perro_action_window">
+      <field name="name">Perros</field>
+      <field name="res_model">persona.perro</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="perro" id="persona.menu_root"/>
+    <menuitem name="Perros" id="persona.menu_perro" parent="persona.menu_root"/>
+    <menuitem name="List" id="persona.menu_perro_list" parent="persona.menu_perro"
+              action="persona.perro_action_window"/>
+
+
+
+
+
+
+
+
+    <record model="ir.ui.view" id="persona.coche_list_view">
+      <field name="name">persona.coche.view.tree</field>
+      <field name="model">persona.coche</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="marca"/>
+          <field name="color"/>
+          <field name="modelo"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- search -->
+
+    <record model="ir.ui.view" id="persona.coche_search_view">
+      <field name="name">persona.coche.view.search</field>
+      <field name="model">persona.coche</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="marca"/>
+          <field name="color"/>
+          <field name="modelo"/>
+          <group>
+            <filter name="group_by_nombre" string="marca" context="{'gropup_by':'marca'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    
+    <!-- form -->
+    
+    <record model="ir.ui.view" id="persona.coche_form_view">
+      <field name="name">persona.coche.view.form</field>
+      <field name="model">persona.coche</field>
+      <field name="arch" type="xml">
+        <form string="Información coche">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                Marca <field name="marca" placeholder="marca"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="color" placeholder="color"/>
+                <field name="modelo"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+
+    <!-- Definición de menús-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="persona.coche_action_window">
+      <field name="name">Coches</field>
+      <field name="res_model">persona.coche</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="coche" id="persona.menu_root"/>
+    <menuitem name="Coches" id="persona.menu_coche" parent="persona.menu_root"/>
+    <menuitem name="List" id="persona.menu_coche_list" parent="persona.menu_coche"
+              action="persona.coche_action_window"/>
+  </data>
+</odoo>

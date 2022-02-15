@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_persona_persona_usuario,persona.persona.usuario,model_persona_persona,persona.group_persona_usuario,1,0,0,0
+access_persona_persona_administrador,persona.persona.administrador,model_persona_persona,persona.group_persona_administrador,1,1,1,1
+
+access_persona_perro_usuario,persona.perro.usuario,model_persona_persona,persona.group_persona_usuario,1,0,0,0
+access_persona_perro_administrador,persona.perro.administrador,model_persona_perro,persona.group_persona_administrador,1,1,1,1
+
+access_persona_persona_usuario,persona.coche.usuario,model_persona_coche,persona.group_persona_usuario,1,0,0,0
+access_persona_persona_administrador,persona.coche.administrador,model_persona_coche,persona.group_persona_administrador,1,1,1,1
